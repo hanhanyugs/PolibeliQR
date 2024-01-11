@@ -13,12 +13,28 @@
       <h1>PT. Tian Xing Cloud Supply Chain Indonesia (PolibeliQR)</h1>
     </header>
 
-    <!-- Container untuk menampilkan QR Code -->
-    <div id="qrcodes"></div>
+    <!-- Container untuk menampilkan informasi -->
+    <div id="info"></div>
   </div>
 
-  <!-- Script untuk menghasilkan QR Code -->
-  <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
-  <script src="app.js"></script>
+  <!-- Script untuk menampilkan informasi dari parameter URL -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var infoContainer = document.getElementById('info');
+
+      // Mendapatkan parameter URL
+      var urlParams = new URLSearchParams(window.location.search);
+      var nama = urlParams.get('nama');
+      var seating = urlParams.get('seating');
+
+      // Menampilkan informasi sesuai template
+      if (nama && seating) {
+        var infoTemplate = "Hello " + nama + ", your seating location is at " + seating + ".";
+        infoContainer.textContent = infoTemplate;
+      } else {
+        infoContainer.textContent = "Invalid QR Code or missing information.";
+      }
+    });
+  </script>
 </body>
 </html>

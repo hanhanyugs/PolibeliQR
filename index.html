@@ -13,25 +13,12 @@
       <h1>PT. Tian Xing Cloud Supply Chain Indonesia (PolibeliQR)</h1>
     </header>
 
-    <!-- Contoh QR Code Viewer menggunakan Google Charts API -->
+    <!-- Container untuk menampilkan QR Code -->
     <div id="qrcodes"></div>
   </div>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      var qrCodeContainer = document.getElementById('qrcodes');
-
-      // Ganti URL berikut sesuai dengan URL yang dihasilkan oleh Google Sheets
-      var urlFromSheet = "https://hanhanyugs.github.io/PolibeliQR/?nama=John&seating=0.02";
-
-      // Menggunakan Google Charts API untuk membuat QR Code
-      var qrCodeUrl = "https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=" + encodeURIComponent(urlFromSheet);
-
-      // Menambahkan elemen gambar dengan QR Code ke elemen dengan id 'qrcodes'
-      var qrCodeImage = document.createElement('img');
-      qrCodeImage.src = qrCodeUrl;
-      qrCodeContainer.appendChild(qrCodeImage);
-    });
-  </script>
+  <!-- Script untuk menghasilkan QR Code -->
+  <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>

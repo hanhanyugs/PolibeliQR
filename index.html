@@ -28,8 +28,8 @@
       var seating = urlParams.get('seating');
 
       // Menampilkan informasi sesuai template
-      if (nama && seating) {
-        var infoTemplate = "Hello " + nama + ", your seating location is at " + seating + ".";
+      if (nama !== null && seating !== null) {
+        var infoTemplate = "Hello " + decodeURIComponent(nama) + ", your seating location is at " + decodeURIComponent(seating) + ".";
         infoContainer.textContent = infoTemplate;
       } else {
         infoContainer.textContent = "Invalid QR Code or missing information.";

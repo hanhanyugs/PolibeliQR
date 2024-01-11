@@ -11,17 +11,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Logika polling untuk mendapatkan data terbaru
   function pollLatestData() {
-    fetch('https://script.google.com/macros/s/AKfycbwPJtqFPLRCWLaQiTEz_9cQTZSYJvDK1WO7hVt79ss/exec/getLatestData')
-      .then(response => response.json())
-      .then(data => {
-        // Lakukan sesuatu dengan data yang diterima
-        console.log('Received latest data:', data);
+  fetch('https://script.google.com/macros/s/AKfycbwk4ojvDgsjON3_Ln6tUV6bTggZLZTe58LNoR2-NJToi5J_FXn40YTkbhhTDDpWvo15/exec/getLatestData')
+    .then(response => response.json())
+    .then(data => {
+      // Lakukan sesuatu dengan data yang diterima
+      console.log('Received latest data:', data);
 
-        // Perbarui tampilan berdasarkan data terbaru
-        updateView(data);
-      })
-      .catch(error => console.error('Error:', error));
-  }
+      // Perbarui tampilan berdasarkan data terbaru
+      updateView(data);
+    })
+    .catch(error => console.error('Error:', error));
+}
 
   // Fungsi untuk memperbarui tampilan berdasarkan data terbaru
   function updateView(data) {

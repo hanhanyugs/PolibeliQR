@@ -20,3 +20,26 @@
   <script src="app.js"></script>
 </body>
 </html>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var qrCodeContainer = document.getElementById('qrcodes');
+
+    // ... (bagian kode lain)
+
+    qrCodeData.forEach(function (data) {
+      var qrCode = new QRCode(qrCodeContainer, {
+        text: data.url,
+        width: 150,
+        height: 150
+      });
+
+      // Tambahkan log
+      var infoText = document.createElement('p');
+      infoText.textContent = "Hello " + data.guestName + ", your seating location is at " + data.seatNumber + ".";
+      qrCodeContainer.appendChild(infoText);
+
+      console.log("Generated QR Code for row: " + data.url);
+    });
+  });
+</script>

@@ -1,8 +1,8 @@
 body {
-  font-size: 18px; /* Ubah sesuai keinginan Anda */
-  background-color: #FF6800; /* Warna background */
-  color: white; /* Warna teks */
-  font-weight: bold; /* Teks tebal */
+  font-size: 18px;
+  background-color: #FF6800;
+  color: white;
+  font-weight: bold;
 }
 
 .container {
@@ -23,4 +23,9 @@ header img {
 #info {
   margin-top: 20px;
   text-align: center;
+}
+
+.customer-name,
+.seating-number {
+  font-size: 20px; /* Ubah sesuai keinginan Anda */
 }

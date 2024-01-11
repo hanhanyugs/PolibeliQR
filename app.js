@@ -23,32 +23,26 @@ document.addEventListener('DOMContentLoaded', function () {
     .catch(error => console.error('Error:', error));
 }
 
-  // Fungsi untuk memperbarui tampilan berdasarkan data terbaru
-  function updateView(data) {
-    // Loop melalui elemen-elemen dan buat QR Code
-    for (var i = 0; i < seatingNumberElements.length; i++) {
-      var seatingNumber = seatingNumberElements[i].textContent.trim();
-      var customerName = customerNameElements[i].textContent.trim();
+// Fungsi untuk memperbarui tampilan berdasarkan data terbaru
+function updateView(data) {
+  // Loop melalui elemen-elemen dan periksa apakah data cocok
+  for (var i = 0; i < seatingNumberElements.length; i++) {
+    var seatingNumber = seatingNumberElements[i].textContent.trim();
+    var customerName = customerNameElements[i].textContent.trim();
 
-      // Jika ada informasi nama dan nomor seating, buat URL GitHub Pages
-      if (customerName !== "" && seatingNumber !== "") {
-        var githubPagesUrl = githubPagesBaseUrl + "?nama=" + encodeURIComponent(customerName) + "&seating=" + encodeURIComponent(seatingNumber);
+    // Jika ada informasi nama dan nomor seating, dan data cocok
+    if (customerName !== "" && seatingNumber !== "" && data.name === customerName && data.seating === seatingNumber) {
+      var githubPagesUrl = githubPagesBaseUrl + "?nama=" + encodeURIComponent(customerName) + "&seating=" + encodeURIComponent(seatingNumber);
 
-        // Membuat QR Code
-        var qrCode = new QRCode(qrCodeContainer, {
-          text: githubPagesUrl,
-          width: 150,
-          height: 150
-        });
-      }
+      // Membuat QR Code
+      var qrCode = new QRCode(qrCodeContainer, {
+        text: githubPagesUrl,
+        width: 150,
+        height: 150
+      });
+
+      // Hentikan loop setelah menemukan data yang cocok
+      break;
     }
   }
-
-  // Panggil fungsi polling saat halaman dimuat
-  pollLatestData();
-
-  // Atur interval untuk polling setiap 5 detik
-  setInterval(function () {
-    pollLatestData();
-  }, 5000);
-});
+}

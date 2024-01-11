@@ -29,7 +29,7 @@
 
       // Menampilkan informasi sesuai template
       if (nama !== null && seating !== null) {
-        var infoTemplate = "Hello " + decodeURIComponent(nama) + ", your seating location is at " + decodeURIComponent(seating) + ".";
+        var infoTemplate = "Hello " + decodeURIComponent(nama) + ", your seating location is at number:" + decodeURIComponent(seating) + ".";
         infoContainer.textContent = infoTemplate;
       } else {
         infoContainer.textContent = "Invalid QR Code or missing information.";

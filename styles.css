@@ -1,7 +1,8 @@
 body {
-  font-family: 'Arial', sans-serif;
-  margin: 0;
-  padding: 0;
+  font-size: 18px; /* Ubah sesuai keinginan Anda */
+  background-color: #FF6800; /* Warna background */
+  color: white; /* Warna teks */
+  font-weight: bold; /* Teks tebal */
 }
 
 .container {
@@ -11,35 +12,15 @@ body {
 }
 
 header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 20px;
+  text-align: center;
 }
 
 header img {
-  width: 80px;
-  margin-bottom: 10px;
+  max-width: 100%;
+  height: auto;
 }
 
-#qrcodes {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-p {
-  margin-top: 10px;
-}
-
-/* Styles for small screens (up to 600px) */
-@media only screen and (max-width: 600px) {
-  header img {
-    width: 50px;
-  }
-
-  #qrcodes {
-    flex-direction: column;
-    align-items: center;
-  }
+#info {
+  margin-top: 20px;
+  text-align: center;
 }
